@@ -18,6 +18,9 @@ JOIN dbo.continents con ON cm.continent_code = con.continent_code
 
 
 -- After creating [GDPTemp(1)] temporary table
+SELECT * INTO GDPTemp
+FROM [GDPTemp(1)]
+
 UPDATE [GDPTemp(1)]
 SET continent_name = 'Rest of World'
 Where continent_name NOT IN ('Asia','Europe')
