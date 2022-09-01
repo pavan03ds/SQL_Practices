@@ -1,4 +1,4 @@
-# SQL_Practices
+# SQL_Challenge1
 
 ### Introduction
 
