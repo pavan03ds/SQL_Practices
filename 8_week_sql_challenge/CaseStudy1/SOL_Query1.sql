@@ -225,10 +225,10 @@ FROM dbo.sales s
 JOIN dbo.menu m ON s.product_id = m.product_id
 WHERE s.order_date BETWEEN (SELECT join_date
                             FROM dbo.members mem
-					        WHERE mem.customer_id = s.customer_id) AND DATEADD(day, 7,(SELECT join_date
-							                                                           FROM dbo.members mem  
-																					   WHERE mem.customer_id = s.customer_id)
-	                                                                           )
+			    WHERE mem.customer_id = s.customer_id) AND DATEADD(day, 7,(SELECT join_date
+							                               FROM dbo.members mem  
+							                               WHERE mem.customer_id = s.customer_id)
+	                                                                    )
 GROUP BY s.customer_id,m.product_name
 ) x
 GROUP BY customer_id
