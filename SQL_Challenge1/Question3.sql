@@ -32,8 +32,10 @@ SELECT  continent_name, gdp_per_capita
 FROM [GDPTemp(1)]
 ) t
 PIVOT
-(SUM(gdp_per_capita)
+(
+SUM(gdp_per_capita)
 FOR continent_name IN (Asia,Europe,[Rest of World]) 
+) AS pivot_table
 
 
 --..........................................................................................................................................................
